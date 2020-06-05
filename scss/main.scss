@@ -1,6 +1,6 @@
 @import 'config';
 @import 'menu';
-
+@import 'mobile';
 
 *{
   box-sizing: border-box;
@@ -25,7 +25,7 @@ h1,h2,h3{
   &.sm-heading{
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($primary-color,2),0.5);
+    background: rgba(lighten($secondary-color,2),0.5);
   }
 }
 
@@ -49,12 +49,38 @@ main{
   height: 100%;
   .icons{
     margin-top: 1rem;
+    
     a{
-      padding: 0.4rem;
-      &:hover{
-        color: $secondary-color;
-        @include easeOut();
+      .fa-facebook{
+        color: #3b5998;
       }
+      .fa-twitter{
+        color: #00acee;
+      }
+      .fa-instagram{
+        color: #dd2a7b ;
+      }
+      .fa-github{
+        color: $secondary-color;
+      }
+      .fa-linkedin{
+        color: #0e76a8;
+      }
+      .fa-youtube{
+        color: #c4302b;
+      }
+
+      .fab{
+        &:hover{
+          color: #fff;
+          text-shadow:0px 0px 40px $secondary-color;
+          transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+          transform: rotate(1turn);
+        }
+      }
+      
+      padding: 0.4rem;
+      color: $secondary-color;
     }
   }
 

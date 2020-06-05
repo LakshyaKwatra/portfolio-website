@@ -1,5 +1,7 @@
 $primary-color: #222629;
 $secondary-color: #86C232;
+$dark-secondary: #61892F;
+$light-primary: #6b6e70;
 $show-home-image: true;
 $home-image: url(../img/background.jpg);
 $background-opacity: 0.9;
@@ -25,5 +27,31 @@ $background-opacity: 0.9;
         background: rgba($primary-color,$background-opacity);
       }
     }
+  }
+}
+
+//Media Query Mixins
+
+@mixin mediaSm{
+  @media screen and (max-width:500px){
+    @content;
+  }
+}
+
+@mixin mediaMd{
+  @media screen and (max-width:768px){
+    @content;
+  }
+}
+
+@mixin mediaLg{
+  @media screen and (min-width:769px) and (max-width: 1170px){
+    @content;
+  }
+}
+
+@mixin mediaXl{
+  @media screen and (max-width:1171px){
+    @content;
   }
 }
