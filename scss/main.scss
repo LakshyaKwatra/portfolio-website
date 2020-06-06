@@ -1,14 +1,12 @@
 @import 'config';
 @import 'menu';
-@import 'mobile';
 
 *{
   box-sizing: border-box;
 }
 body{
   @include background;
-  background: $primary-color;
-  color: #fff;
+  color: set-text-color($primary-color);
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -25,12 +23,12 @@ h1,h2,h3{
   &.sm-heading{
     margin-bottom: 2rem;
     padding: 0.2rem 1rem;
-    background: rgba(lighten($secondary-color,2),0.5);
+    background: rgba(lighten($secondary-color,2),0.3);
   }
 }
 
 a{
-  color: #fff;
+  color: set-text-color($primary-color);
   text-decoration: none;
 }
 
@@ -72,7 +70,7 @@ main{
 
       .fab{
         &:hover{
-          color: #fff;
+          color: set-text-color($primary-color);
           text-shadow:0px 0px 40px $secondary-color;
           transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
           transform: rotate(1turn);
@@ -91,3 +89,209 @@ main{
     }
   }
 }
+
+
+
+
+// .about-info{
+//   display: grid;
+//   grid-gap: 30px;
+//   grid-template-areas:
+//   'bioimage bio bio'
+//   'job1 job2 job3';
+//   grid-template-columns: repeat(3,1fr);
+//   .bio-image{
+//     grid-area: bioimage;
+//     margin: auto;
+//     border-radius: 50%;
+//     border: $secondary-color 3px solid;
+//     width: 250px;
+//     min-width: 0;
+//   }
+  
+//   .bio{
+//     grid-area: bio;
+//     font-size: 1.5rem;
+//   }
+  
+//   .job-1{
+//     grid-area: job1;
+//   }
+//   .job-2{
+//     grid-area: job2;
+//   }
+//   .job-3{
+//     grid-area: job3;
+//   }
+  
+//   .job{
+//     background: lighten($primary-color,5);
+//     padding:0.5rem;
+//     border-bottom: $secondary-color 5px solid;
+//   }
+// }
+
+
+.about-bio{
+  display: grid;
+  grid-gap: 30px;
+  margin-bottom: 30px;
+  grid-template-areas:
+  "image bio bio";
+  grid-template-columns: repeat(3,1fr);
+  .bio-image{
+    grid-area: image;
+    margin: auto;
+    border-radius: 50%;
+    border: $secondary-color 3px solid;
+    width: 250px;
+  }
+  .bio{
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+    
+}
+/*
+.jobs{
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas:
+  "job1 job2 job3";
+  grid-template-columns: repeat(3,1fr);
+  .job-1{
+    grid-area: job1;
+  }
+  .job-2{
+    grid-area: job2;
+  }
+  .job-3{
+    grid-area: job3;
+  }
+  .job{
+    background: rgba(lighten($secondary-color,2),0.3);
+    border-bottom: $secondary-color 5px solid;
+    overflow: hidden;
+    border-radius: 5%;
+  }
+  .card-image{
+    border-bottom: none;
+  }
+}
+*/
+
+.jobs{
+  margin: 0 auto;
+  justify-items: center;
+  max-width: 1200;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.job {
+  background-color: rgba(darken($secondary-color,20),0.5);
+  width: 15rem;
+  height: 15.5rem;
+  margin-bottom: 30px;
+  text-align: center;
+  border-top-left-radius: 5%;
+  border-top-right-radius: 5%;
+}
+.card-image-container{
+  overflow: hidden;
+}
+.card-image{
+  background-size: cover;
+  height: 10rem;
+  transition: all 1s ease-out;
+}
+
+.card-image:hover{
+  transform: scale(1.1);  
+  opacity: 0.4; 
+}
+
+.card-image-1{
+  background-image: url('../img/cards/samsung_logo2.png');
+}
+.card-image-2{
+  background-image: url('../img/cards/telangana_logo.png');
+}
+
+.card-image-3{
+  background-image: url('../img/cards/fingertips_logo.png');
+}
+
+.card-image-4{
+  background-image: url('../img/cards/unacademy_logo.png');
+}
+
+
+.collapsible {
+  background-color: $secondary-color;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  font-weight: bold;
+  outline: none;
+  font-size: 15px;
+}
+
+
+.collapsible:hover {
+  background:#86C232;
+  color: #fff;
+  
+}
+
+.collapsible:after {
+  content: '\002B';
+  font-weight: bold;
+  float: right;
+  margin-left: 5px; 
+}
+
+
+.active:after {
+  content: "\2212";
+}
+
+
+.collapsible-content {
+  position: relative;
+  z-index: 0;
+  padding: 0 18px;
+  color: set-text-color($primary-color);
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background:rgba(darken($secondary-color,38),0.95);
+  margin-bottom: 18px;
+  border-bottom-left-radius: 5%;
+  border-bottom-right-radius: 5%;  
+
+}
+
+.card-description{
+  margin: 0 auto;
+}
+
+.card-firm{
+  display: inline-block;
+}
+.card-designation{
+  display: inline-block;
+  background: rgba(darken($primary-color,20),0.5);
+  width: 15rem;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.card-job-duration{
+  font-weight: bold;
+}
+
+
+@import 'mobile';

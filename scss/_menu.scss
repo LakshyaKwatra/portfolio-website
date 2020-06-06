@@ -1,6 +1,5 @@
 .menu-btn{
   position: absolute;
-  z-index: 3;
   right: 35px;
   top: 35px;
   cursor: pointer;
@@ -10,7 +9,7 @@
     width: 28px;
     height: 3px;
     margin: 0 0 5px 0;
-    background: #fff;
+    background: set-text-color($primary-color);
     @include easeOut;
   }
 
@@ -34,6 +33,7 @@
 //Menu Overlay
 .menu{
   position: fixed;
+  z-index: 1;
   top: 0;
   width: 100%;
   visibility: hidden;
@@ -54,7 +54,7 @@
   &-nav{
     margin:0;
     padding: 0;
-    background: rgba(darken($primary-color,5),0.9);
+    background: rgba(darken($primary-color,5),0.98);
     list-style: none;
     transform: translate3d(0,-100%,0);
     @include easeOut;
@@ -65,7 +65,7 @@
   }
 
   &-branding{
-    background: rgba(darken($secondary-color,30),0.9);
+    background: rgba(darken($secondary-color,30),0.98);
     transform: translate3d(0, 100%, 0);
     @include easeOut;
     
@@ -98,7 +98,7 @@
     text-transform: uppercase;
     padding: 1rem 0;
     font-weight:300;
-    color: #fff;
+    color: set-text-color($primary-color);
     text-decoration: none;
     @include easeOut;
 
