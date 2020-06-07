@@ -200,18 +200,19 @@ main {
   }
 }
 */
-.jobs {
+.jobs, .projects {
   margin: 0 auto;
   justify-items: center;
+  justify-content: center;
   max-width: 1200;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 
-.job {
+.job, .project {
   background-color: rgba(9, 75, 114, 0.5);
-  width: 15rem;
+  width: 18rem;
   height: 15.5rem;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
   text-align: center;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%; }
@@ -240,11 +241,35 @@ main {
 .card-image-4 {
   background-image: url("../img/cards/unacademy_logo.png"); }
 
+.project-card-image-1 {
+  background-image: url("../img/projects/project-1.png"); }
+
+.project-card-image-2 {
+  background-image: url("../img/projects/project-2.png"); }
+
+.project-card-image-3 {
+  background-image: url("../img/projects/project-3.png"); }
+
+.project-card-image-4 {
+  background-image: url("../img/projects/project-4.png"); }
+
+.project-card-image-5 {
+  background-image: url("../img/projects/project-5.png"); }
+
+.project-card-image-6 {
+  background-image: url("../img/projects/project-6.png"); }
+
+.project-card-image-7 {
+  background-image: url("../img/projects/project-7.png"); }
+
+.project-card-image-8 {
+  background-image: url("../img/projects/project-8.png"); }
+
 .collapsible {
   background-color: #108ad1;
   color: #fff;
   cursor: pointer;
-  padding: 10px 20px;
+  padding: 0.6rem 1rem;
   width: 100%;
   border: none;
   text-align: left;
@@ -253,7 +278,7 @@ main {
   font-size: 15px; }
 
 .collapsible:hover {
-  background: #86C232;
+  background: #094b72;
   color: #fff; }
 
 .collapsible:after {
@@ -274,7 +299,7 @@ main {
   overflow: hidden;
   transition: max-height 0.2s ease-out;
   background: rgba(2, 19, 29, 0.95);
-  margin-bottom: 18px;
+  margin-bottom: 0;
   border-bottom-left-radius: 5%;
   border-bottom-right-radius: 5%; }
 
@@ -287,18 +312,33 @@ main {
 .card-designation {
   display: inline-block;
   background: rgba(0, 0, 0, 0.5);
-  width: 15rem;
+  width: 100%;
   font-size: 1.2em;
   font-weight: bold; }
 
+.long-card-designation {
+  font-size: 1em; }
+
 .card-job-duration {
   font-weight: bold; }
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  width: 100%; }
+  .btn:hover {
+    background: #031d2b; }
+
+.btn-dark {
+  background: black;
+  color: #fff; }
 
 @media screen and (max-width: 1171px) {
   body {
     background-image: url(../img/background3.jpg); } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   main {
     align-items: center;
     text-align: center;
