@@ -3,6 +3,11 @@
   right: 35px;
   top: 35px;
   cursor: pointer;
+  &:hover{
+    .btn-line{
+      background: $secondary-color;
+    }
+  }
   @include easeOut;
 
   .btn-line{
@@ -11,6 +16,7 @@
     margin: 0 0 5px 0;
     background: set-text-color($primary-color);
     @include easeOut;
+    
   }
 
   &.close{

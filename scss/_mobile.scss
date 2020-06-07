@@ -17,7 +17,6 @@
   
   main{
     align-items: center;
-    text-align: center;
     align-content: center;
 
     .lg-heading{
@@ -64,6 +63,7 @@
   body{
     background-image: url('../img/mobile_background.jpg');
   }
+  
   main#home h1{
     margin-top: 10vh;
   }
@@ -78,5 +78,17 @@
   }
   main#about p{
     font-size: 1rem;
+  }
+  main#work h1{
+    font-size: 3rem;
+  }
+  main#work h2{
+    font-size: 0.9rem;
+  }
+  main#contact h1{
+    font-size: 3rem;
+  }
+  main#contact h2{
+    font-size: 0.9rem;
   }
  }

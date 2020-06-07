@@ -43,13 +43,13 @@ header{
 }
 
 main{
-  padding: 4rem;
+  padding: 4rem 2rem;
   height: 100%;
   .icons{
     margin-top: 1rem;
     
     a{
-      .fa-facebook{
+      /*.fa-facebook{
         color: #3b5998;
       }
       .fa-twitter{
@@ -67,12 +67,14 @@ main{
       .fa-youtube{
         color: #c4302b;
       }
-
+      */
+      
       .fab{
+        color: set-text-color($primary-color);
         &:hover{
-          color: set-text-color($primary-color);
-          text-shadow:0px 0px 40px $secondary-color;
-          transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+          color: $secondary-color;
+          //text-shadow:0px 0px 40px #fff;
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
           transform: rotate(1turn);
         }
       }
@@ -103,7 +105,6 @@ main{
     grid-area: image;
     margin: auto;
     border-radius: 50%;
-    border: $secondary-color 3px solid;
     width: 250px;
   }
   .bio{
@@ -112,6 +113,84 @@ main{
   }
     
 }
+
+
+.link-to-blog{
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+@mixin btn-border-drawing($color: #ccc, $hover: black, $width: 2px, $vertical: top, $horizontal: left, $duration: 0.25s) {
+  box-shadow: inset 0 0 0 $width $color;
+  color: $color;
+  transition: color $duration $duration/3;
+  position: relative;
+  
+  &::before,
+  &::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0; height: 0;
+    
+    #{$vertical}: 0; 
+    #{$horizontal}: 0;
+  }
+
+  &::before {
+    $h-side: if($horizontal == 'left', 'right', 'left');
+    
+    border-#{$vertical}-width: $width;
+    border-#{$h-side}-width: $width;
+  }
+  
+  &::after {
+    $v-side: if($vertical == 'top', 'bottom', 'top');
+    
+    border-#{$v-side}-width: $width;
+    border-#{$horizontal}-width: $width;
+  }
+  
+  &:hover {
+    color: $hover;
+    
+    &::before,
+    &::after {
+      border-color: $hover;
+      transition: border-color 0s, width $duration, height $duration;
+      width: 100%;
+      height: 100%;
+    }
+    
+    &::before { transition-delay: 0s, 0s, $duration; }
+    
+    &::after { transition-delay: 0s, $duration, 0s; }
+  }
+}
+
+.btn-blog {
+  @include btn-border-drawing(set-text-color($primary-color), $secondary-color, 4px, bottom, right);
+}
+
+//=== Button styling, semi-ignore
+.btn-blog {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem;
+  
+  &:focus { outline: 2px dotted #55d7dc; }
+}
+
+
+
+
+
 /*
 .jobs{
   display: grid;
@@ -146,14 +225,16 @@ main{
   justify-content: center;
   max-width: 1200;
   display: grid;
+  grid-gap: 0.4rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 3rem;
 }
 
 .job, .project {
   background-color: rgba(darken($secondary-color,20),0.5);
   width: 18rem;
   height: 15.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 5rem;
   text-align: center;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%;
@@ -223,16 +304,19 @@ main{
   font-weight: bold;
   outline: none;
   font-size: 15px;
+  transition: all 0.2s ease-out;
 }
 
 
 .collapsible:hover {
+  @include easeOut;
   background: darken($secondary-color,20);
   color: #fff;
   
 }
 
 .collapsible:after {
+  @include easeOut;
   content: '\002B';
   font-weight: bold;
   float: right;
@@ -241,6 +325,7 @@ main{
 
 
 .active:after {
+  @include easeOut;
   content: "\2212";
 }
 
@@ -289,6 +374,7 @@ main{
   padding: 0.5rem 1rem;
   border: 0;
   width: 100%;
+  @include easeOut;
   &:hover{
     background: darken($secondary-color,35);
     ;
@@ -299,6 +385,46 @@ main{
   background: darken($primary-color,50);
   color: #fff;
 }
+
+
+.contact-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3 rem;
+  /*justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */ 
+}
+.contact-icon{
+  margin: 0 auto;
+  width: 5rem;
+  font-size: 4rem;
+  color: set-text-color($primary-color);
+  @include easeOut;
+  
+}
+.contact-detail{
+  text-align: center;
+  margin-bottom: 1 rem;
+  padding: 0.5rem 1rem; 
+  &:hover{
+    .contact-icon{
+      @include easeOut;
+      transform: scale(1.2);
+      color:$secondary-color;
+    }
+  }  
+}
+
+.contact-description{
+  font-size: 1.2rem;
+}
+
+
+
+
+
 
 
 @import 'mobile';

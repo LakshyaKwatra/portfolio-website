@@ -4,6 +4,8 @@
   top: 35px;
   cursor: pointer;
   transition: all 0.5s ease-out; }
+  .menu-btn:hover .btn-line {
+    background: #108ad1; }
   .menu-btn .btn-line {
     width: 28px;
     height: 3px;
@@ -128,30 +130,38 @@ header {
   color: #108ad1; }
 
 main {
-  padding: 4rem;
+  padding: 4rem 2rem;
   height: 100%; }
   main .icons {
     margin-top: 1rem; }
     main .icons a {
+      /*.fa-facebook{
+        color: #3b5998;
+      }
+      .fa-twitter{
+        color: #00acee;
+      }
+      .fa-instagram{
+        color: #dd2a7b ;
+      }
+      .fa-github{
+        color: $secondary-color;
+      }
+      .fa-linkedin{
+        color: #0e76a8;
+      }
+      .fa-youtube{
+        color: #c4302b;
+      }
+      */
       padding: 0.4rem;
       color: #108ad1; }
-      main .icons a .fa-facebook {
-        color: #3b5998; }
-      main .icons a .fa-twitter {
-        color: #00acee; }
-      main .icons a .fa-instagram {
-        color: #dd2a7b; }
-      main .icons a .fa-github {
-        color: #108ad1; }
-      main .icons a .fa-linkedin {
-        color: #0e76a8; }
-      main .icons a .fa-youtube {
-        color: #c4302b; }
-      main .icons a .fab:hover {
-        color: #fff;
-        text-shadow: 0px 0px 40px #108ad1;
-        transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
-        transform: rotate(1turn); }
+      main .icons a .fab {
+        color: #fff; }
+        main .icons a .fab:hover {
+          color: #108ad1;
+          transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+          transform: rotate(1turn); }
   main#home {
     overflow: hidden; }
     main#home h1 {
@@ -167,11 +177,58 @@ main {
     grid-area: image;
     margin: auto;
     border-radius: 50%;
-    border: #108ad1 3px solid;
     width: 250px; }
   .about-bio .bio {
     grid-area: bio;
     font-size: 1.5rem; }
+
+.link-to-blog {
+  text-align: center;
+  margin-bottom: 5rem; }
+
+.btn-blog {
+  box-shadow: inset 0 0 0 4px #fff;
+  color: #fff;
+  transition: color 0.25s 0.08333s;
+  position: relative; }
+  .btn-blog::before, .btn-blog::after {
+    border: 0 solid transparent;
+    box-sizing: border-box;
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    width: 0;
+    height: 0;
+    bottom: 0;
+    right: 0; }
+  .btn-blog::before {
+    border-bottom-width: 4px;
+    border-left-width: 4px; }
+  .btn-blog::after {
+    border-top-width: 4px;
+    border-right-width: 4px; }
+  .btn-blog:hover {
+    color: #108ad1; }
+    .btn-blog:hover::before, .btn-blog:hover::after {
+      border-color: #108ad1;
+      transition: border-color 0s, width 0.25s, height 0.25s;
+      width: 100%;
+      height: 100%; }
+    .btn-blog:hover::before {
+      transition-delay: 0s, 0s, 0.25s; }
+    .btn-blog:hover::after {
+      transition-delay: 0s, 0.25s, 0s; }
+
+.btn-blog {
+  background: none;
+  border: none;
+  cursor: pointer;
+  line-height: 1.5;
+  font: 700 1.2rem 'Roboto Slab', sans-serif;
+  padding: 1em 2em;
+  letter-spacing: 0.05rem; }
+  .btn-blog:focus {
+    outline: 2px dotted #55d7dc; }
 
 /*
 .jobs{
@@ -206,13 +263,15 @@ main {
   justify-content: center;
   max-width: 1200;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+  grid-gap: 0.4rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: 3rem; }
 
 .job, .project {
   background-color: rgba(9, 75, 114, 0.5);
   width: 18rem;
   height: 15.5rem;
-  margin-bottom: 60px;
+  margin-bottom: 5rem;
   text-align: center;
   border-top-left-radius: 5%;
   border-top-right-radius: 5%; }
@@ -275,19 +334,23 @@ main {
   text-align: left;
   font-weight: bold;
   outline: none;
-  font-size: 15px; }
+  font-size: 15px;
+  transition: all 0.2s ease-out; }
 
 .collapsible:hover {
+  transition: all 0.5s ease-out;
   background: #094b72;
   color: #fff; }
 
 .collapsible:after {
+  transition: all 0.5s ease-out;
   content: '\002B';
   font-weight: bold;
   float: right;
   margin-left: 5px; }
 
 .active:after {
+  transition: all 0.5s ease-out;
   content: "\2212"; }
 
 .collapsible-content {
@@ -326,13 +389,42 @@ main {
   display: inline-block;
   padding: 0.5rem 1rem;
   border: 0;
-  width: 100%; }
+  width: 100%;
+  transition: all 0.5s ease-out; }
   .btn:hover {
     background: #031d2b; }
 
 .btn-dark {
   background: black;
   color: #fff; }
+
+.contact-details {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3 rem;
+  /*justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); */ }
+
+.contact-icon {
+  margin: 0 auto;
+  width: 5rem;
+  font-size: 4rem;
+  color: #fff;
+  transition: all 0.5s ease-out; }
+
+.contact-detail {
+  text-align: center;
+  margin-bottom: 1 rem;
+  padding: 0.5rem 1rem; }
+  .contact-detail:hover .contact-icon {
+    transition: all 0.5s ease-out;
+    transform: scale(1.2);
+    color: #108ad1; }
+
+.contact-description {
+  font-size: 1.2rem; }
 
 @media screen and (max-width: 1171px) {
   body {
@@ -341,7 +433,6 @@ main {
 @media screen and (max-width: 1024px) {
   main {
     align-items: center;
-    text-align: center;
     align-content: center; }
     main .lg-heading {
       line-height: 1;
@@ -379,4 +470,12 @@ main {
   main#about h2 {
     font-size: 0.9rem; }
   main#about p {
-    font-size: 1rem; } }
+    font-size: 1rem; }
+  main#work h1 {
+    font-size: 3rem; }
+  main#work h2 {
+    font-size: 0.9rem; }
+  main#contact h1 {
+    font-size: 3rem; }
+  main#contact h2 {
+    font-size: 0.9rem; } }
