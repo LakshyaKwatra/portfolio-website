@@ -274,7 +274,7 @@ main {
   padding: 1em 2em;
   letter-spacing: 0.05rem; }
   .btn-blog:focus {
-    outline: 2px dotted #55d7dc; }
+    outline: none; }
 
 /*
 .jobs{
