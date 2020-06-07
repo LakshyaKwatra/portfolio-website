@@ -166,7 +166,7 @@ main {
     overflow: hidden; }
     main#home h1 {
       margin-top: 20vh; }
-
+/*
 .about-bio {
   display: grid;
   grid-gap: 30px;
@@ -180,7 +180,54 @@ main {
     width: 250px; }
   .about-bio .bio {
     grid-area: bio;
-    font-size: 1.5rem; }
+    font-size: 1.5rem; }*/  
+
+    .about-bio {
+      margin-bottom: 30px;
+     }
+      .about-bio .bio-image {
+        float: left;
+        padding: 15px;
+        border-radius: 50%;
+        width: 250px; 
+      }
+      .about-bio .bio {
+        font-size: 1.5rem;
+       }
+
+       .bio{
+         margin-bottom: 80px;
+       }
+
+      .about-headers{
+        font-size: 2rem;
+        text-align: center;
+      }
+
+
+.education{
+  display: grid;
+  grid-template-areas:
+  'logo details';
+  font-size: 1.5rem;
+}
+.education-image{
+  margin: auto;
+  margin-bottom: 0;
+  width: 200px;
+  grid-area: logo;
+  padding: 20px;
+}
+.education-details{
+  grid-area: details;
+  background: rgba(darken(#108ad1,20),1);
+}
+.education-detail-title{
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+
 
 .link-to-blog {
   text-align: center;
@@ -454,9 +501,7 @@ main {
     transform: translate3d(100%, 0, 0); }
   .portrait {
     transform: scale(0.5); }
-  .about-bio {
-    grid-template-areas: 'image' 'bio';
-    grid-template-columns: 1fr; } }
+  }
 
 @media screen and (max-width: 500px) {
   body {
@@ -478,4 +523,33 @@ main {
   main#contact h1 {
     font-size: 3rem; }
   main#contact h2 {
-    font-size: 0.9rem; } }
+    font-size: 0.9rem; }
+    .about-bio {
+      display: grid;
+      justify-items: center;
+      grid-template-areas: 'image'
+   'bio';
+      grid-template-columns: 1fr; } 
+    .bio-image{
+      float: none;
+    }
+    .bio{
+      margin-bottom: 10px;
+    }
+    .education{
+      display: grid;
+      grid-template-areas:
+      'logo'
+      'details';
+    }
+    .education-image{
+      margin: auto;
+      grid-area: logo;
+    }
+    .education-details{
+      grid-area: details;
+      text-align: center;
+    }
+    .education-detail-title{
+    }
+  }
