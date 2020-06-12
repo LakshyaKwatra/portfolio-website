@@ -109,11 +109,12 @@ body {
   line-height: 1.5; }
   body#bg-img {
     z-index: -100;
-    background-attachment: fixed;
     background: rgba(34, 38, 41, 0.7);
     background-image: url(../img/background3.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     background-blend-mode: color-burn;
-    background-size: cover; }
+    /*background-size: cover;*/ }
 
 h1, h2, h3 {
   margin: 0;
